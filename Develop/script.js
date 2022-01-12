@@ -1,8 +1,5 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
-
-// Input variables AND values defined
+// Set static variables
+  
 var Uppercase = ["A" , "B", "C" , "D" , "E" , "F" , "G", "H", "I", "J" , "K" , "L" , "M" , "N" , "O" , "P" , "Q" , "R" , "S" , "T", "U", "V" , "W" , "X" , "Y" , "Z"]
 var Lowercase = ["a", "b", "c" ,"d" , "e", "f" , "g" , "h" , "i" , "j" , "k" , "l"  , "m", "n" , "m" , "o" , "p" , "q" , "r" , "s" , "t" , "u" , "v" ,"w" , "x" , "y" , "z"];
 var Numbers = [1,2,3,4,5,6,7,8,9];
@@ -23,53 +20,61 @@ function questions() {
       askUpperCase: askUppercase,
       askSpecial: askSpecial
     } 
+  }
+
  
-  } while(!isValid);
+  while(!isValid);
   return responses;
 }
-
 // create function to generate password 
-function generatePassword() {
-var password = [];
-var finalPassword = "";
+
+function generatePass(){
+ var password = [];
+ var resultPass = "";
 
 
-var length = prompt("Choose password length between 8 and 128 characters") 
-if (length <8 || length > 128)
-{
-    alert("You must enter a value!");
+
+ var length = prompt("How many characters would you like your password to be?");
+
+ if(length <8 || length > 128){
+     alert("Choose password length between 8 and 128 characters");
+ }
+
+// Confirm what options the user would like in their password. 
+ 
+ else{
+     if(confirm("Would you like to use Uppercase letters?")){
+         Array.prototype.push.apply(password, Uppercase);
+     }
+
+     if(confirm("Would you like to use lowercase letters?")){
+         Array.prototype.push.apply(password, Lowercase);
+     }
+
+     if(confirm("Would you like to use numbers?")){
+         Array.prototype.push.apply(password, Numbers);
+     }
+
+     if(confirm("Would you like to use special characters?")){
+         Array.prototype.push.apply(password, Symbol);
+     }
+
+     if(password.length===0){
+         alert("You must select at lease 1 type of characters to generate a password!\nPlease start over.");
+     }
+
+//  create loop for information and generate the password
+
+     else{
+         for(var i=0; i<length; i++){
+             var random = Math.floor(Math.random()*password.length);
+             resultPass += password[random];
+         }
+     }
+     }
+
+// Generate the password and link to the button on the HTML page. 
+
+     document.getElementById("password").innerHTML = resultPass;
 }
-
-  if(confirm("Would you like to use Upper case letters?")){
-Array.prototype.push.apply (password, Uppercase)
-  }
-
-  if (confirm( "Would you like to use lowercase letters?")){
-      Array.prototype.push.apply(password, Lowercase)
-  }
-if (confirm("Would you likle to use numbers?")){
-    Array.prototype.push.apply(password, Numbers)
-}
-if(confirm("Would you like to use special characters?")){
-    Array.prototype.push.apply(password, Special)
-}
-
-if(password.length===0){
-    alert("You must enter a value!");
-}
-
-
-// create loop for information and generate the password
-
-    // Write password to the #password input
-    function writePassword() {
-      var password = generatePassword();
-      var passwordText = document.querySelector("#password");
-    
-      passwordText.value = password;
-    }
-
-
-    // Add event listener to generate button
-    generateBtn.addEventListener("click", writePassword);
 
