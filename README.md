@@ -11,6 +11,7 @@ When selected the options they will then have a generated password.
 
 The video below will show a demo on how to use the application and generate the password. 
 https://watch.screencastify.com/v/RAhEpHwOGFU2zakqK4ok
+![Password Generator](https://user-images.githubusercontent.com/93951895/149633608-7631e5fc-f6fd-4192-941a-d5f370a17997.png)
 
 
 **Sources:**
