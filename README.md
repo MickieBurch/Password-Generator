@@ -9,7 +9,7 @@ When selected the options they will then have a generated password.
 
 **Demo**
 
-The video below will show a demo on how to use the application and generate the password. 
+The link below will show a demo on how to use the application and generate the password. 
 https://user-images.githubusercontent.com/93951895/149633674-835764c2-cc14-474f-9fd8-f1431b2ea32d.mp4
 ![Password Generator](https://user-images.githubusercontent.com/93951895/149633608-7631e5fc-f6fd-4192-941a-d5f370a17997.png)
 
