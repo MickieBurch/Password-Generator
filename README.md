@@ -17,4 +17,6 @@ https://user-images.githubusercontent.com/93951895/149633674-835764c2-cc14-474f-
 **Sources:**
 We3Schools
 
+**Live application link** 
+https://mickieburch.github.io/Password-Generator/
 
